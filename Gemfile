@@ -9,6 +9,7 @@ gem 'rails', '3.2.8'
 gem 'squeel'
 gem 'pg'
 
+gem 'comfortable_mexican_sofa', '~> 1.8.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,8 +23,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem "rails-backbone" #, git: "git://github.com/dcvezzani/backbone-rails.git"
+gem 'jquery-rails', '>= 2.2.0'
+#gem "rails-backbone" #, git: "git://github.com/dcvezzani/backbone-rails.git"
 
 # To use ACL
 gem "devise", ">= 2.1.0"

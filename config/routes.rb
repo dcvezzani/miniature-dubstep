@@ -1,4 +1,7 @@
 Clf004::Application.routes.draw do
+  
+  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
+  
   get "welcome/index"
   get "welcome/wizard", as: :wizard_welcome
   get "welcome/wizard_bar", as: :wizard_bar_welcome
@@ -61,4 +64,8 @@ Clf004::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
+  # Make sure this routeset is defined last
+  ComfortableMexicanSofa::Routing.content(:path => '/', :sitemap => false)
 end
