@@ -1,7 +1,5 @@
 Clf004::Application.routes.draw do
   
-  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
-  
   get "welcome/index"
   get "welcome/wizard", as: :wizard_welcome
   get "welcome/wizard_bar", as: :wizard_bar_welcome
@@ -67,5 +65,6 @@ Clf004::Application.routes.draw do
 
 
   # Make sure this routeset is defined last
-  ComfortableMexicanSofa::Routing.content(:path => '/', :sitemap => false)
+  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
+  ComfortableMexicanSofa::Routing.content(:path => '/', :sitemap => true)
 end

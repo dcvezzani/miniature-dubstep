@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title><%= html_title %></title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%# provides access to css content entered in through CMS %>
+    <%= stylesheet_link_tag cms_content_css_path(@cms_site.id, @cms_layout.identifier) %>
+
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag cms_content_js_path(@cms_site.id, @cms_layout.identifier) %> 
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

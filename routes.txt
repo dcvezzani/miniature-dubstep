@@ -1,16 +1,73 @@
-           welcome_index GET    /welcome/index(.:format)       welcome#index
-          welcome_wizard GET    /welcome/wizard(.:format)      welcome#wizard
-        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
-            user_session POST   /users/sign_in(.:format)       devise/sessions#create
-    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
-           user_password POST   /users/password(.:format)      devise/passwords#create
-       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
-      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
-                         PUT    /users/password(.:format)      devise/passwords#update
-cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
-       user_registration POST   /users(.:format)               devise/registrations#create
-   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
-  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
-                         PUT    /users(.:format)               devise/registrations#update
-                         DELETE /users(.:format)               devise/registrations#destroy
-                    root        /                              welcome#index
+                         welcome_index GET    /welcome/index(.:format)                                                      welcome#index
+                        wizard_welcome GET    /welcome/wizard(.:format)                                                     welcome#wizard
+                    wizard_bar_welcome GET    /welcome/wizard_bar(.:format)                                                 welcome#wizard_bar
+                      new_user_session GET    /users/sign_in(.:format)                                                      devise/sessions#new
+                          user_session POST   /users/sign_in(.:format)                                                      devise/sessions#create
+                  destroy_user_session DELETE /users/sign_out(.:format)                                                     devise/sessions#destroy
+                         user_password POST   /users/password(.:format)                                                     devise/passwords#create
+                     new_user_password GET    /users/password/new(.:format)                                                 devise/passwords#new
+                    edit_user_password GET    /users/password/edit(.:format)                                                devise/passwords#edit
+                                       PUT    /users/password(.:format)                                                     devise/passwords#update
+              cancel_user_registration GET    /users/cancel(.:format)                                                       devise/registrations#cancel
+                     user_registration POST   /users(.:format)                                                              devise/registrations#create
+                 new_user_registration GET    /users/sign_up(.:format)                                                      devise/registrations#new
+                edit_user_registration GET    /users/edit(.:format)                                                         devise/registrations#edit
+                                       PUT    /users(.:format)                                                              devise/registrations#update
+                                       DELETE /users(.:format)                                                              devise/registrations#destroy
+                                  root        /                                                                             welcome#index
+                             cms_admin GET    /cms-admin(.:format)                                                          cms_admin/base#jump
+       form_blocks_cms_admin_site_page GET    /cms-admin/sites/:site_id/pages/:id/form_blocks(.:format)                     cms_admin/pages#form_blocks
+     toggle_branch_cms_admin_site_page GET    /cms-admin/sites/:site_id/pages/:id/toggle_branch(.:format)                   cms_admin/pages#toggle_branch
+          reorder_cms_admin_site_pages PUT    /cms-admin/sites/:site_id/pages/reorder(.:format)                             cms_admin/pages#reorder
+   revert_cms_admin_site_page_revision PUT    /cms-admin/sites/:site_id/pages/:page_id/revisions/:id/revert(.:format)       cms_admin/revisions#revert
+         cms_admin_site_page_revisions GET    /cms-admin/sites/:site_id/pages/:page_id/revisions(.:format)                  cms_admin/revisions#index
+          cms_admin_site_page_revision GET    /cms-admin/sites/:site_id/pages/:page_id/revisions/:id(.:format)              cms_admin/revisions#show
+                  cms_admin_site_pages GET    /cms-admin/sites/:site_id/pages(.:format)                                     cms_admin/pages#index
+                                       POST   /cms-admin/sites/:site_id/pages(.:format)                                     cms_admin/pages#create
+               new_cms_admin_site_page GET    /cms-admin/sites/:site_id/pages/new(.:format)                                 cms_admin/pages#new
+              edit_cms_admin_site_page GET    /cms-admin/sites/:site_id/pages/:id/edit(.:format)                            cms_admin/pages#edit
+                   cms_admin_site_page PUT    /cms-admin/sites/:site_id/pages/:id(.:format)                                 cms_admin/pages#update
+                                       DELETE /cms-admin/sites/:site_id/pages/:id(.:format)                                 cms_admin/pages#destroy
+          reorder_cms_admin_site_files PUT    /cms-admin/sites/:site_id/files/reorder(.:format)                             cms_admin/files#reorder
+                  cms_admin_site_files GET    /cms-admin/sites/:site_id/files(.:format)                                     cms_admin/files#index
+                                       POST   /cms-admin/sites/:site_id/files(.:format)                                     cms_admin/files#create
+               new_cms_admin_site_file GET    /cms-admin/sites/:site_id/files/new(.:format)                                 cms_admin/files#new
+              edit_cms_admin_site_file GET    /cms-admin/sites/:site_id/files/:id/edit(.:format)                            cms_admin/files#edit
+                   cms_admin_site_file PUT    /cms-admin/sites/:site_id/files/:id(.:format)                                 cms_admin/files#update
+                                       DELETE /cms-admin/sites/:site_id/files/:id(.:format)                                 cms_admin/files#destroy
+        reorder_cms_admin_site_layouts PUT    /cms-admin/sites/:site_id/layouts/reorder(.:format)                           cms_admin/layouts#reorder
+ revert_cms_admin_site_layout_revision PUT    /cms-admin/sites/:site_id/layouts/:layout_id/revisions/:id/revert(.:format)   cms_admin/revisions#revert
+       cms_admin_site_layout_revisions GET    /cms-admin/sites/:site_id/layouts/:layout_id/revisions(.:format)              cms_admin/revisions#index
+        cms_admin_site_layout_revision GET    /cms-admin/sites/:site_id/layouts/:layout_id/revisions/:id(.:format)          cms_admin/revisions#show
+                cms_admin_site_layouts GET    /cms-admin/sites/:site_id/layouts(.:format)                                   cms_admin/layouts#index
+                                       POST   /cms-admin/sites/:site_id/layouts(.:format)                                   cms_admin/layouts#create
+             new_cms_admin_site_layout GET    /cms-admin/sites/:site_id/layouts/new(.:format)                               cms_admin/layouts#new
+            edit_cms_admin_site_layout GET    /cms-admin/sites/:site_id/layouts/:id/edit(.:format)                          cms_admin/layouts#edit
+                 cms_admin_site_layout PUT    /cms-admin/sites/:site_id/layouts/:id(.:format)                               cms_admin/layouts#update
+                                       DELETE /cms-admin/sites/:site_id/layouts/:id(.:format)                               cms_admin/layouts#destroy
+       reorder_cms_admin_site_snippets PUT    /cms-admin/sites/:site_id/snippets/reorder(.:format)                          cms_admin/snippets#reorder
+revert_cms_admin_site_snippet_revision PUT    /cms-admin/sites/:site_id/snippets/:snippet_id/revisions/:id/revert(.:format) cms_admin/revisions#revert
+      cms_admin_site_snippet_revisions GET    /cms-admin/sites/:site_id/snippets/:snippet_id/revisions(.:format)            cms_admin/revisions#index
+       cms_admin_site_snippet_revision GET    /cms-admin/sites/:site_id/snippets/:snippet_id/revisions/:id(.:format)        cms_admin/revisions#show
+               cms_admin_site_snippets GET    /cms-admin/sites/:site_id/snippets(.:format)                                  cms_admin/snippets#index
+                                       POST   /cms-admin/sites/:site_id/snippets(.:format)                                  cms_admin/snippets#create
+            new_cms_admin_site_snippet GET    /cms-admin/sites/:site_id/snippets/new(.:format)                              cms_admin/snippets#new
+           edit_cms_admin_site_snippet GET    /cms-admin/sites/:site_id/snippets/:id/edit(.:format)                         cms_admin/snippets#edit
+                cms_admin_site_snippet PUT    /cms-admin/sites/:site_id/snippets/:id(.:format)                              cms_admin/snippets#update
+                                       DELETE /cms-admin/sites/:site_id/snippets/:id(.:format)                              cms_admin/snippets#destroy
+             cms_admin_site_categories GET    /cms-admin/sites/:site_id/categories(.:format)                                cms_admin/categories#index
+                                       POST   /cms-admin/sites/:site_id/categories(.:format)                                cms_admin/categories#create
+           new_cms_admin_site_category GET    /cms-admin/sites/:site_id/categories/new(.:format)                            cms_admin/categories#new
+          edit_cms_admin_site_category GET    /cms-admin/sites/:site_id/categories/:id/edit(.:format)                       cms_admin/categories#edit
+               cms_admin_site_category PUT    /cms-admin/sites/:site_id/categories/:id(.:format)                            cms_admin/categories#update
+                                       DELETE /cms-admin/sites/:site_id/categories/:id(.:format)                            cms_admin/categories#destroy
+                 cms_admin_site_dialog GET    /cms-admin/sites/:site_id/dialog/:type(.:format)                              cms_admin/dialogs#show
+                       cms_admin_sites GET    /cms-admin/sites(.:format)                                                    cms_admin/sites#index
+                                       POST   /cms-admin/sites(.:format)                                                    cms_admin/sites#create
+                    new_cms_admin_site GET    /cms-admin/sites/new(.:format)                                                cms_admin/sites#new
+                   edit_cms_admin_site GET    /cms-admin/sites/:id/edit(.:format)                                           cms_admin/sites#edit
+                        cms_admin_site PUT    /cms-admin/sites/:id(.:format)                                                cms_admin/sites#update
+                                       DELETE /cms-admin/sites/:id(.:format)                                                cms_admin/sites#destroy
+                       cms_content_css GET    /cms-css/:site_id/:identifier(.:format)                                       cms_content#render_css
+                        cms_content_js GET    /cms-js/:site_id/:identifier(.:format)                                        cms_content#render_js
+                      cms_content_html GET    /(*cms_path)(.:format)                                                        cms_content#render_html

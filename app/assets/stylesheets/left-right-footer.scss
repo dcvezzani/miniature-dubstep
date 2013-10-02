@@ -1,0 +1,32 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.center{
+  width: 100%;
+  min-width: 600px;
+  max-width: 725px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.left_column{
+  padding: 1em;
+  width: 44%; 
+  background-color: #ECEFF6;
+  float: left; 
+}
+
+.right_column{
+  padding: 1em;
+  width: 44%; 
+  background-color: #D8E0F6;
+  float: right; 
+}
+
+.footer{
+  margin-top: 1em;
+  float: left;
+  width: 100%;
+}
+
